@@ -32,7 +32,7 @@ let rec rem l =
   match l with
   | [] -> []
   | h::[] -> [h]
-  | a::b::t -> if a = b then (rem (b::t)) else (a::(rem (b::t)))
+  | a::b::t -> if a = b then rem (b::t) else a::(rem (b::t))
 
 
 (*******************)
@@ -53,7 +53,9 @@ let rec eq a b =
   (subset a b) && (subset b a)
 
 let rec remove x a =
-  []
+  match a with
+  | [] -> []
+  | h::t -> if h = x then t else h::(remove x t)
 
 let rec union a b =
   []
