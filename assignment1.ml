@@ -14,7 +14,7 @@ let rec flatten l =
   match l with
   | [] -> []
   | []::t -> flatten t
-  | (h::t)::t2 -> h::(flatten (t::t2));;
+  | (h::t)::t2 -> (h::t)@(flatten t2);;
 
 (*****************************)
 (* Problem 3: remove_stutter *)
