@@ -11,14 +11,19 @@ let rec range num1 num2 =
 (**********************)
 
 let rec flatten l =
-  []
+  match l with
+  | [] -> []
+  | []::t -> flatten t
+  | (h::t)::t2 -> h::(flatten (t::t2));;
 
 (*****************************)
 (* Problem 3: remove_stutter *)
 (*****************************)
 
 let rec remove_stutter l =
-  []
+  match l with
+  | [] -> []
+  | h::t -> if
 
 (*******************)
 (* Problem 4: sets *)
