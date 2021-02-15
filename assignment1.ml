@@ -24,13 +24,16 @@ let rec flatten l =
 - stop at every element
 - check if the next one is the same
 - if it's the same dont add it to the new list
+[1 2 2 3]
+1::()
 *)
 
 let rec rem l =
   match l with
   | [] -> []
-  | _::[] -> []
-  | a::b::t -> if a = b then (a::(rem t)) else (a::b::(rem t))
+  | h::[] -> [h]
+  | a::b::t -> if a = b then (rem (b::t)) else (a::(rem (b::t)))
+
 
 (*******************)
 (* Problem 4: sets *)
