@@ -20,10 +20,17 @@ let rec flatten l =
 (* Problem 3: remove_stutter *)
 (*****************************)
 
-let rec remove_stutter l =
+(*
+- stop at every element
+- check if the next one is the same
+- if it's the same dont add it to the new list
+*)
+
+let rec rem l =
   match l with
   | [] -> []
-  | h::t -> if
+  | _::[] -> []
+  | a::b::t -> if a = b then (a::(rem t)) else (a::b::(rem t))
 
 (*******************)
 (* Problem 4: sets *)
