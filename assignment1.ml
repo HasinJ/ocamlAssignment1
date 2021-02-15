@@ -28,11 +28,11 @@ let rec flatten l =
 1::()
 *)
 
-let rec rem l =
+let rec remove_stutter l =
   match l with
   | [] -> []
   | h::[] -> [h]
-  | a::b::t -> if a = b then rem (b::t) else a::(rem (b::t))
+  | a::b::t -> if a = b then (remove_stutter (b::t)) else (a::(remove_stutter (b::t)))
 
 
 (*******************)
