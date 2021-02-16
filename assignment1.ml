@@ -58,7 +58,7 @@ let rec remove x a =
   | h::t -> if h = x then t else h::(remove x t)
 
 let rec union a b =
-  []
+  a@b
 
 let rec diff a b =
   []
