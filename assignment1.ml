@@ -57,7 +57,10 @@ let rec remove x a =
   | [] -> []
   | h::t -> if h = x then t else h::(remove x t)
 
-let rec union a b = a@b
+let rec union a b =
+  match a with
+  | [] -> b
+  | (h::t) -> if (elem h b) = false then h::(union t b) else union t b
 
 let rec diff a b =
   match a with
