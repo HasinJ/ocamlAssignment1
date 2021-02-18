@@ -1,3 +1,4 @@
+
 (********************)
 (* Problem 1: range *)
 (********************)
@@ -129,7 +130,7 @@ let main () =
       assert (eq (remove 5 []) []);
       assert (eq (remove 5 [2;3;5;7;9]) [2;3;9;7]);
       assert (eq (remove 4 [2;3;5;7;9]) [2;3;5;9;7]);
-      assert (eq (remove 9 [9;3;5;7;9]) [9;5;3;7]);
+      assert (eq (remove 9 [2;3;5;7;9]) [2;5;3;7]);
     with e -> (error_count := !error_count + 1; print_string ((Printexc.to_string e)^"\n")) in
 
   (* Testcases for union *)
